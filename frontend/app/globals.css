@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #0a0a0f;
+  --bg-card: #12121a;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Animated scan line for upload area */
+.scan-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.4),
+    rgba(139, 92, 246, 0.4),
+    transparent
+  );
+  height: 2px;
+  animation: scan 2s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0%, 100% { transform: translateY(-50%); opacity: 0.5; }
+  50% { transform: translateY(50%); opacity: 1; }
+}
+
+/* Circular progress */
+.circle-progress {
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.6s ease;
+}
